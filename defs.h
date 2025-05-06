@@ -76,5 +76,16 @@ typedef struct {
     S_UNDO history[MAXGAMEMOVES];
 } S_BOARD;
 
+// Macros
+#define FR2SQ(f,r) ((21 + (f)) + ((r) * 10))
+
+// Globals
+extern int Sq120ToSq64 [BRD_SQ_NUM] ;
+extern int Sq64ToSq120[64];
+
+// Functions
+extern void AllInit();
+
+
 
 #endif
