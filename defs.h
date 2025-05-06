@@ -72,6 +72,7 @@ typedef struct {
     int bigPce[3];
     int majPce[3];
     int minPce[3];
+    int tester;
 
     S_UNDO history[MAXGAMEMOVES];
 } S_BOARD;
