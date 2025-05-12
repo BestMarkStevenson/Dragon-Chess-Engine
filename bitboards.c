@@ -43,6 +43,7 @@ void PrintBitBoard(U64 bb) {
                 printf("X");
             else
                 printf("-");
+            printf(" ");
         }
         printf("\n");
     }

@@ -3,31 +3,22 @@
 
 int main() {
     AllInit();
+    int index = 0;
 
     U64 playBitBoard = 0ULL;
+    for (index = 0; index < 64; index++){
+        printf("Index: %d\n", index);
+        PrintBitBoard(SetMask[index]);
+        printf("\n");
+    }
 
-
-    playBitBoard |= (1ULL << SQ64(D2)); 
-    playBitBoard |= (1ULL << SQ64(D3)); 
-
-    playBitBoard |= (1ULL << SQ64(D4)); 
-
-    PrintBitBoard(playBitBoard);
-
-    printf("\n");
-    int count = CNT(playBitBoard);
-
-    printf("Count: %d \n", count);
-
-    int index = POP(&playBitBoard);
-    printf("Index: %d\n", index);
+    SETBIT(playBitBoard, 61);
 
     PrintBitBoard(playBitBoard);
 
-    count = CNT(playBitBoard);
-    printf("Count: %d \n", count);
+    CLRBIT(playBitBoard,61);
 
-    
+    PrintBitBoard(playBitBoard);
 
 
 
