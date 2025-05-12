@@ -1,2 +1,2 @@
 all:
-	gcc dragon.c init.c -o dragon
+	gcc dragon.c init.c bitboards.c -o dragon

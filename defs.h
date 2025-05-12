@@ -1,5 +1,25 @@
 #ifndef DEFS_H
 #define DEFS_H
+#include "stdlib.h"
+
+#define DEBUG
+
+#ifndef DEBUG
+#define ASSERT(n)
+#else
+#define ASSERT(n) \
+    if (!(n)) { \
+        printf("%s - Failed ", #n); \
+        printf("On %s ", __DATE__); \
+        printf("At %s ", __TIME__); \
+        printf("In File %s ", __FILE__); \
+        printf("At Line %d\n", __LINE__); \
+        exit(1); \
+    }
+#endif
+
+
+
 
 typedef unsigned long long U64;
 
@@ -74,17 +94,32 @@ typedef struct {
     int minPce[3];
 
     S_UNDO history[MAXGAMEMOVES];
+
+    // piece list
+    int pList[13][10];
+
+    // pList[wN][0] = E1;
+    // pList[wN][1] = D4; ... 
+
+
 } S_BOARD;
 
 // Macros
 #define FR2SQ(f,r) ((21 + (f)) + ((r) * 10))
+#define SQ64(sq120) Sq120ToSq64[sq120]
 
 // Globals
 extern int Sq120ToSq64 [BRD_SQ_NUM] ;
 extern int Sq64ToSq120[64];
 
 // Functions
+
+// init.c
 extern void AllInit();
+
+// bitboards.c
+extern void printBitBoard(U64 bb);
+
 
 
 
