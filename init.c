@@ -5,7 +5,7 @@ int Sq120ToSq64 [BRD_SQ_NUM] ;
 int Sq64ToSq120[64];
 
 void InitSq120To64() {
-    int index = 0;
+    int index;
     int file = FILE_A;
     int rank = RANK_1;
     int sq = A1;
@@ -32,5 +32,5 @@ void InitSq120To64() {
 
 
 void AllInit() {
-    
+    InitSq120To64();
 }
