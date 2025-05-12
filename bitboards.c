@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "defs.h"
 
-void PrintBitBoard(U64 bb) {
+void printBitBoard(U64 bb) {
 
     U64 shiftMe = 1ULL;
 
