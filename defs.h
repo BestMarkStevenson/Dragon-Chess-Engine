@@ -27,6 +27,7 @@ typedef unsigned long long U64;
 #define BRD_SQ_NUM 120
 #define OFFBOARD 120
 #define MAXGAMEMOVES 2048
+#define START_FEN "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
 
 enum {
     EMPTY, wP, wN, wB, wR, wQ, wK, 
@@ -138,6 +139,9 @@ extern int CountBits(U64 b);
 // hashkeys.c
 extern U64 GeneratePosKey(const S_BOARD *pos);
 
+// board.c
+extern void ResetBoard(S_BOARD *pos);
+extern int ParseFen(char *fen, S_BOARD *pos);
 
 
 
